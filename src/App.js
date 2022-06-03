@@ -2,9 +2,7 @@ import './App.css';
 import React, { useState } from 'react';
 
 function App() {
-// let cards = ['King', 'King', 'Queen', 'Queen', 'Jack', 'Jack']
 const [check, setCheck] = useState(false)
-const [count, setCount] = useState(0)
 
 const [check1, setCheck1] = useState(false)
 const [check2, setCheck2] = useState(false)
@@ -22,29 +20,40 @@ const [check6, setCheck6] = useState(false)
 //   check6: (false),
 // });
 
-// console.log(check2)
-// console.log(check1)
+//Shuffle function 
+const ul = document.querySelector('ul');
+const shuffle = () => {
+  document.getElementsByClassName('pog').style.display = "none"
+  for (let i = ul.children.length; i >= 0; i--) {
+    ul.appendChild(ul.children[Math.random() * i | 0]);
+}
+// document.getElementById('test').style.display = 'none'
+// p.style.display = 'none'
+}
+
 
   return (
     <div className="App">
+        <button className='shuffle' onClick={shuffle}>Shuffle</button>
         <ul>
+          <p className='pog'>hi</p>
           <div className='cards' onClick={() => {setCheck1(!check1)}}>
-            <p style={{ display: check1 ? "block" : "none" }}>King</p>
+            <p className='cards' style={{ display: check1 ? "block" : "none" }}>King</p>
           </div>
           <div className='cards' onClick={() => {setCheck2(!check2)}}>
-            <p style={{ display: check2 ? "block" : "none" }}>King</p>
+            <p className="reset" style={{ display: check2 ? "block" : "none" }}>King</p>
           </div>
           <div className='cards' onClick={() => {setCheck3(!check3)}}>
-            <p style={{ display: check3 ? "block" : "none" }}>Queen</p>
+            <p className="reset" style={{ display: check3 ? "block" : "none" }}>Queen</p>
           </div>
           <div className='cards' onClick={() => {setCheck4(!check4)}}>
-            <p style={{ display: check4 ? "block" : "none" }}>Queen</p>
+            <p className="reset" style={{ display: check4 ? "block" : "none" }}>Queen</p>
           </div>
           <div className='cards' onClick={() => {setCheck5(!check5)}}>
-            <p style={{ display: check5 ? "block" : "none" }}>Jack</p>
+            <p className="reset" style={{ display: check5 ? "block" : "none" }}>Jack</p>
           </div>
           <div className='cards' onClick={() => {setCheck6(!check6)}}>
-            <p style={{ display: check6 ? "block" : "none" }}>Jack</p> 
+            <p className="reset" style={{ display: check6 ? "block" : "none" }}>Jack</p> 
           </div>
         </ul>
     </div>
