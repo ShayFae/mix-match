@@ -2,23 +2,12 @@ import './App.css';
 import React, { useState, useEffect } from 'react';
 
 function App() {
-const [check, setCheck] = useState(false)
-
 const [check1, setCheck1] = useState(false)
 const [check2, setCheck2] = useState(false)
 const [check3, setCheck3] = useState(false)
 const [check4, setCheck4] = useState(false)
 const [check5, setCheck5] = useState(false)
 const [check6, setCheck6] = useState(false)
-
-// const [state, setState] = useState({
-//   check1: (false),
-//   check2: (false),
-//   check3: (false),
-//   check4: (false),
-//   check5: (false),
-//   check6: (false),
-// });
 
 //Shuffle function 
 const ul = document.querySelector('ul');
@@ -40,16 +29,22 @@ const shuffle = () => {
 //   shuffle()
 // }, [])
 
-// const test = () => {
-//   if(document.getElementsByName(''))
-// }
+const  match = (event) => {
+  const name = event.target.getAttribute("name");
+  console.log(name)
+}
+
+//test match
+let h = [];
+const f = () => {
+}
 
   return (
     <div className="App">
-        <button className='shuffle' onClick={shuffle}>Shuffle</button>
+        <button className='shuffle' name="King" onClick={shuffle}>Shuffle</button>
         <ul>
-          <div className='cards' onClick={() => {setCheck1(!check1)}}>
-            <p className='reset' style={{ display: check1 ? "block" : "none" }} name='King'>King</p>
+          <div className='cards' name='King' onClick={() => {setCheck1(!check1); match()}}>
+            <p className='reset' style={{ display: check1 ? "block" : "none" }} name='King' onClick={remove}>King</p>
           </div>
           <div className='cards' onClick={() => {setCheck2(!check2)}}>
             <p className="reset" style={{ display: check2 ? "block" : "none" }} name='King'>King</p>
