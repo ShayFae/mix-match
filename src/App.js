@@ -31,36 +31,42 @@ const shuffle = () => {
 
 const  match = (event) => {
   const name = event.target.getAttribute("name");
-  console.log(name)
-}
-
-//test match
-let h = [];
-const f = () => {
+  let p = []
+  p.push(name)
+  console.log(p)
 }
 
   return (
     <div className="App">
-        <button className='shuffle' name="King" onClick={shuffle}>Shuffle</button>
+        <button className='shuffle' onClick={shuffle}>Shuffle</button>
         <ul>
-          <div className='cards' name='King' onClick={() => {setCheck1(!check1); match()}}>
-            <p className='reset' style={{ display: check1 ? "block" : "none" }} name='King' onClick={remove}>King</p>
-          </div>
-          <div className='cards' onClick={() => {setCheck2(!check2)}}>
-            <p className="reset" style={{ display: check2 ? "block" : "none" }} name='King'>King</p>
-          </div>
-          <div className='cards' onClick={() => {setCheck3(!check3)}}>
-            <p className="reset" style={{ display: check3 ? "block" : "none" }} name='Queen'>Queen</p>
-          </div>
-          <div className='cards' onClick={() => {setCheck4(!check4)}}>
-            <p className="reset" style={{ display: check4 ? "block" : "none" }} name='Queen'>Queen</p>
-          </div>
-          <div className='cards' onClick={() => {setCheck5(!check5)}}>
-            <p className="reset" style={{ display: check5 ? "block" : "none" }} name='Jack'>Jack</p>
-          </div>
-          <div className='cards' onClick={() => {setCheck6(!check6)}}>
-            <p className="reset" style={{ display: check6 ? "block" : "none" }} name='Jack'>Jack</p> 
-          </div>
+          <section onClick={match}>
+            <div className='cards' name='King' onClick={() => {setCheck1(!check1)}}>
+              <p className='reset' style={{ display: check1 ? "block" : "none" }}>King</p>
+            </div>
+            <div className='cards' name='King' onClick={() => {setCheck2(!check2)}}>
+              <p className="reset" style={{ display: check2 ? "block" : "none" }}>King</p>
+            </div>
+          </section>
+
+          <section onClick={match}>
+            <div className='cards' name='Queen' onClick={() => {setCheck3(!check3)}}>
+              <p className="reset" style={{ display: check3 ? "block" : "none" }}>Queen</p>
+            </div>
+            <div className='cards' name='Queen' onClick={() => {setCheck4(!check4)}}>
+              <p className="reset" style={{ display: check4 ? "block" : "none" }}>Queen</p>
+            </div>
+          </section>
+
+          <section onClick={match}>
+            <div className='cards' name='Jack' onClick={() => {setCheck5(!check5)}}>
+              <p className="reset" style={{ display: check5 ? "block" : "none" }}>Jack</p>
+            </div>
+            <div className='cards' name='Jack' onClick={() => {setCheck6(!check6)}}>
+              <p className="reset" style={{ display: check6 ? "block" : "none" }}>Jack</p> 
+            </div> 
+          </section>
+
         </ul>
     </div>
   );
