@@ -11,6 +11,7 @@ const [check6, setCheck6] = useState(false);
 
 const [o, setO] = useState([]);
 const [add, setAdd] = useState('')
+const [score, setScore] = useState(0)
 
 //Shuffle function 
 const ul = document.querySelector('ul');
@@ -26,6 +27,7 @@ const shuffle = () => {
   setCheck4(false);
   setCheck5(false);
   setCheck6(false);
+  setScore(0)
 }
 
 // useEffect(() => {
@@ -47,9 +49,16 @@ if(o.length >= 2) {
   console.log(y);
   if(y[0] === y[1]) {
     console.log('MATCH');
+    // setCount(prev => {
+    //   prev += 1
+    // })
+    setScore(prev => prev + 1);
     setO([])
   } else {
     console.log('NO MATCH');
+    //Test
+    // setCheck1(!check1)
+    // setCheck2(!check2)
   }
 }
 
@@ -57,38 +66,39 @@ if(o.length > 2) {
   setO([]);
 }
 
+console.log(score)
   return (
     <div className="App">
-        <button className='shuffle' onClick={shuffle}>Shuffle</button>
+        <h1>Current Score: {score}</h1>
         <ul>
           <section onClick={match}>
-            <div className='cards' name='King' onClick={() => {setCheck1(!check1); setAdd('King')}}>
-              <p className='reset' style={{ display: check1 ? "block" : "none" }}>King</p>
+            <div className='cards' name='King' onClick={() => {setCheck1(!check1); setAdd('Kng')}}>
+              <p className='reset' style={{ display: check1 ? "block" : "none" }}><img src="https://static.vecteezy.com/system/resources/previews/004/745/869/original/top-hat-free-vector.jpg" /></p>
             </div>
             <div className='cards' name="King" onClick={() => {setCheck2(!check2); setAdd('King')}}>
-              <p className="reset" style={{ display: check2 ? "block" : "none" }}>King</p>
+              <p className="reset" style={{ display: check2 ? "block" : "none" }}><img src="https://static.vecteezy.com/system/resources/previews/004/745/869/original/top-hat-free-vector.jpg" /></p>
             </div>
           </section>
 
           <section onClick={match}>
             <div className='cards' name='Queen' onClick={() => {setCheck3(!check3); setAdd('Queen')}}>
-              <p className="reset" style={{ display: check3 ? "block" : "none" }}>Queen</p>
+              <p className="reset" style={{ display: check3 ? "block" : "none" }}><img src="https://static.thenounproject.com/png/1179225-200.png" /></p>
             </div>
             <div className='cards' name='Queen' onClick={() => {setCheck4(!check4); setAdd('Queen')}}>
-              <p className="reset" style={{ display: check4 ? "block" : "none" }}>Queen</p>
+              <p className="reset" style={{ display: check4 ? "block" : "none" }}><img src="https://static.thenounproject.com/png/1179225-200.png" /></p>
             </div>
           </section>
 
           <section onClick={match}>
             <div className='cards' name='Jack' onClick={() => {setCheck5(!check5); setAdd('Jack')}}>
-              <p className="reset" style={{ display: check5 ? "block" : "none" }}>Jack</p>
+              <p className="reset" style={{ display: check5 ? "block" : "none" }}><img src="https://opengameart.org/sites/default/files/psController.png" /></p>
             </div>
             <div className='cards' name='Jack' onClick={() => {setCheck6(!check6); setAdd('Jack')}}>
-              <p className="reset" style={{ display: check6 ? "block" : "none" }}>Jack</p> 
+              <p className="reset" style={{ display: check6 ? "block" : "none" }}><img src="https://opengameart.org/sites/default/files/psController.png" /></p> 
             </div> 
           </section>
-
         </ul>
+        <button className='shuffle' onClick={shuffle}>Shuffle</button>
     </div>
   );
 }
