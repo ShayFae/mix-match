@@ -10,6 +10,8 @@ function App() {
   const [check6, setCheck6] = useState(false);
 
   const [hat, setHat] = useState(false)
+  const [check7, setCheck7] = useState(false);
+
 
   const [values, setValues] = useState([]);
   const [add, setAdd] = useState('')
@@ -29,6 +31,7 @@ const shuffle = () => {
     setCheck4(false);
     setCheck5(false);
     setCheck6(false);
+    setCheck7(false);
     setScore(0)
   }
 
@@ -36,8 +39,6 @@ const shuffle = () => {
   //   shuffle()
   // }, [])
 
-  let p =[];
-  let test = {}
   let valArray = []
 
   const  match = (event) => {
@@ -58,8 +59,16 @@ const shuffle = () => {
         console.log('NO MATCH')
         let test = document.getElementsByName(valArray[0], valArray[1])
         console.log(test)
+        // setHat(true)
+
         if(valArray[0] === 'Hat' || valArray[1] === 'Hat') {
+          // document.getElementById('Test').style.display = "none"
+          // setCheck1(false)
+          // setCheck2(false)
           // setHat(true)
+          document.getElementById("Test").onclick = function(event) {
+            event.target.style.visibility = 'hidden';
+          }
         }
   }
 
@@ -73,10 +82,12 @@ const shuffle = () => {
         <ul>
           <section onClick={match}>
             <div className='cards' name='Hat' onClick={() => {setCheck1(!check1)}}>
-              <p style={{ display: check1 ? "block" : "none" }}><img src="https://static.vecteezy.com/system/resources/previews/004/745/869/original/top-hat-free-vector.jpg" /></p>
+              <p id='Test' style={{ display: check1 ? "block" : "none" }}><img src="https://static.vecteezy.com/system/resources/previews/004/745/869/original/top-hat-free-vector.jpg" /></p>
             </div>
             <div className='cards' name="Hat" onClick={() => {setCheck2(!check2)}}>
-              <p style={{ display: check2 ? "block" : "none" }}><img src="https://static.vecteezy.com/system/resources/previews/004/745/869/original/top-hat-free-vector.jpg" style={{ display: hat ? "none" : "block" }}/></p>
+              <div className='test'>
+              <p style={{ display: check2 ? "block" : "none" }}><img src="https://static.vecteezy.com/system/resources/previews/004/745/869/original/top-hat-free-vector.jpg"/></p>
+            </div>
             </div>
           </section>
 
@@ -87,6 +98,33 @@ const shuffle = () => {
             <div className='cards' name='Cat' onClick={() => {setCheck4(!check4)}}>
               <p style={{ display: check4 ? "block" : "none" }}><img src="https://static.thenounproject.com/png/1179225-200.png" /></p>
             </div>
+          </section>
+
+          <section onClick={match}>
+            <div className='cards' name='Controller' onClick={() => {setCheck5(!check5)}}>
+              <p style={{ display: check5 ? "block" : "none" }}><img src="https://opengameart.org/sites/default/files/psController.png" /></p>
+            </div>
+            <div className='cards' name='Controller' onClick={() => {setCheck6(!check6)}}>
+              <p style={{ display: check6 ? "block" : "none" }}><img src="https://opengameart.org/sites/default/files/psController.png" /></p> 
+            </div> 
+          </section>
+
+          <section onClick={match}>
+            <div className='cards' name='Controller' onClick={() => {setCheck5(!check5)}}>
+              <p style={{ display: check5 ? "block" : "none" }}><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8BjF0eO9MS4fmkWlJdldwQPiphgS6KFEc9g&usqp=CAU" /></p>
+            </div>
+            <div className='cards' name='Controller' onClick={() => {setCheck6(!check6)}}>
+              <p style={{ display: check6 ? "block" : "none" }}><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8BjF0eO9MS4fmkWlJdldwQPiphgS6KFEc9g&usqp=CAU" /></p> 
+            </div> 
+          </section>
+
+          <section onClick={match}>
+            <div className='cards' name='Controller' onClick={() => {setCheck5(!check5)}}>
+              <p style={{ display: check5 ? "block" : "none" }}><img src="https://opengameart.org/sites/default/files/psController.png" /></p>
+            </div>
+            <div className='cards' name='Controller' onClick={() => {setCheck6(!check6)}}>
+              <p style={{ display: check6 ? "block" : "none" }}><img src="https://opengameart.org/sites/default/files/psController.png" /></p> 
+            </div> 
           </section>
 
           <section onClick={match}>

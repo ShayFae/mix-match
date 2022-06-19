@@ -29,8 +29,8 @@ img {
 
 h1 {
   text-align: center;
-  margin-top: 100px;
-  padding-top: 40px;
+  /* margin-top: 100px;
+  padding-top: 40px; */
 }
 
 button {
@@ -48,4 +48,9 @@ button {
 
 div {
   background: white;
+  /*box-sizing: border-box; */
 }
+
+/* .test {
+  background-color: red !important;
+} */
