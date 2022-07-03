@@ -11,6 +11,8 @@ function App() {
 
   const [hat, setHat] = useState(false)
   const [check7, setCheck7] = useState(false);
+  const [check8, setCheck8] = useState(false);
+
 
 
   const [values, setValues] = useState([]);
@@ -21,7 +23,6 @@ function App() {
   const ul = document.querySelector('ul');
 
 const shuffle = () => {
-  // document.getElementsByClassName('pog').style.display = "none"
     for (let i = ul.children.length; i >= 0; i--) {
       ul.appendChild(ul.children[Math.random() * i | 0]);
     }
@@ -32,6 +33,7 @@ const shuffle = () => {
     setCheck5(false);
     setCheck6(false);
     setCheck7(false);
+    setCheck8(false);
     setScore(0)
   }
 
@@ -51,7 +53,6 @@ const shuffle = () => {
     let parseVal = values.filter(x => x !== null);
     valArray.push(parseVal[0], parseVal[1])
   }
-  // console.log(d)
   if(valArray.length === 2  && valArray[0] === valArray[1]) {
     setScore(prev => prev + 1);
     console.log('MATCH')
@@ -59,13 +60,7 @@ const shuffle = () => {
         console.log('NO MATCH')
         let test = document.getElementsByName(valArray[0], valArray[1])
         console.log(test)
-        // setHat(true)
-
         if(valArray[0] === 'Hat' || valArray[1] === 'Hat') {
-          // document.getElementById('Test').style.display = "none"
-          // setCheck1(false)
-          // setCheck2(false)
-          // setHat(true)
           document.getElementById("Test").onclick = function(event) {
             event.target.style.visibility = 'hidden';
           }
@@ -110,14 +105,14 @@ const shuffle = () => {
           </section>
 
           <section onClick={match}>
-            <div className='cards' name='Controller' onClick={() => {setCheck5(!check5)}}>
-              <p style={{ display: check5 ? "block" : "none" }}><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8BjF0eO9MS4fmkWlJdldwQPiphgS6KFEc9g&usqp=CAU" /></p>
+            <div className='cards' name='Controller' onClick={() => {setCheck7(!check7)}}>
+              <p style={{ display: check7 ? "block" : "none" }}><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8BjF0eO9MS4fmkWlJdldwQPiphgS6KFEc9g&usqp=CAU" /></p>
             </div>
-            <div className='cards' name='Controller' onClick={() => {setCheck6(!check6)}}>
-              <p style={{ display: check6 ? "block" : "none" }}><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8BjF0eO9MS4fmkWlJdldwQPiphgS6KFEc9g&usqp=CAU" /></p> 
+            <div className='cards' name='Controller' onClick={() => {setCheck8(!check8)}}>
+              <p style={{ display: check8 ? "block" : "none" }}><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8BjF0eO9MS4fmkWlJdldwQPiphgS6KFEc9g&usqp=CAU" /></p> 
             </div> 
           </section>
-
+{/* 
           <section onClick={match}>
             <div className='cards' name='Controller' onClick={() => {setCheck5(!check5)}}>
               <p style={{ display: check5 ? "block" : "none" }}><img src="https://opengameart.org/sites/default/files/psController.png" /></p>
@@ -134,7 +129,7 @@ const shuffle = () => {
             <div className='cards' name='Controller' onClick={() => {setCheck6(!check6)}}>
               <p style={{ display: check6 ? "block" : "none" }}><img src="https://opengameart.org/sites/default/files/psController.png" /></p> 
             </div> 
-          </section>
+          </section> */}
         </ul>
         <button className='shuffle' onClick={shuffle}>Shuffle</button>
     </div>
