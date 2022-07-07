@@ -39,7 +39,7 @@ button {
   justify-content: center;
 }
 
-.App {
+.game {
   background-color: orange;
   /* width: 50%; */
   height: 100vh;
@@ -50,10 +50,6 @@ div {
   background: white;
   /*box-sizing: border-box; */
 }
-
-/* .test {
-  background-color: red !important;
-} */
 
 .win {
   background-color: blueviolet;
