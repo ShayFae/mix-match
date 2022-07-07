@@ -13,6 +13,8 @@ function App() {
   const [check7, setCheck7] = useState(false);
   const [check8, setCheck8] = useState(false);
 
+  const [win, setWin] = useState(false)
+
 
 
   const [values, setValues] = useState([]);
@@ -37,9 +39,10 @@ const shuffle = () => {
     setScore(0)
   }
 
-  // useEffect(() => {
-  //   shuffle()
-  // }, [])
+  useEffect(() => {
+    if(score === 4) {
+      setWin(true)
+    }})
 
   let valArray = []
 
@@ -53,6 +56,7 @@ const shuffle = () => {
     let parseVal = values.filter(x => x !== null);
     valArray.push(parseVal[0], parseVal[1])
   }
+
   if(valArray.length === 2  && valArray[0] === valArray[1]) {
     setScore(prev => prev + 1);
     console.log('MATCH')
@@ -65,6 +69,7 @@ const shuffle = () => {
             event.target.style.visibility = 'hidden';
           }
         }
+ 
   }
 
   if(values.length > 2) {
@@ -74,6 +79,7 @@ const shuffle = () => {
   return (
     <div className="App">
         <h1>Current Score: {score}</h1>
+        {win == false && 
         <ul>
           <section onClick={match}>
             <div className='cards' name='Hat' onClick={() => {setCheck1(!check1)}}>
@@ -112,26 +118,15 @@ const shuffle = () => {
               <p style={{ display: check8 ? "block" : "none" }}><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8BjF0eO9MS4fmkWlJdldwQPiphgS6KFEc9g&usqp=CAU" /></p> 
             </div> 
           </section>
-{/* 
-          <section onClick={match}>
-            <div className='cards' name='Controller' onClick={() => {setCheck5(!check5)}}>
-              <p style={{ display: check5 ? "block" : "none" }}><img src="https://opengameart.org/sites/default/files/psController.png" /></p>
-            </div>
-            <div className='cards' name='Controller' onClick={() => {setCheck6(!check6)}}>
-              <p style={{ display: check6 ? "block" : "none" }}><img src="https://opengameart.org/sites/default/files/psController.png" /></p> 
-            </div> 
+          <button className='shuffle' onClick={shuffle}>Shuffle</button>
+        </ul> 
+              }
+        {win == true && 
+          <section className='win'>
+            <h1>Winner! Please press restart to play again</h1>
+            <button  onClick={() => {setWin(false); shuffle()}}>Restart</button>
           </section>
-
-          <section onClick={match}>
-            <div className='cards' name='Controller' onClick={() => {setCheck5(!check5)}}>
-              <p style={{ display: check5 ? "block" : "none" }}><img src="https://opengameart.org/sites/default/files/psController.png" /></p>
-            </div>
-            <div className='cards' name='Controller' onClick={() => {setCheck6(!check6)}}>
-              <p style={{ display: check6 ? "block" : "none" }}><img src="https://opengameart.org/sites/default/files/psController.png" /></p> 
-            </div> 
-          </section> */}
-        </ul>
-        <button className='shuffle' onClick={shuffle}>Shuffle</button>
+          }
     </div>
   );
 }

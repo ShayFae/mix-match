@@ -43,7 +43,7 @@ button {
   background-color: orange;
   /* width: 50%; */
   height: 100vh;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 div {
@@ -54,3 +54,19 @@ div {
 /* .test {
   background-color: red !important;
 } */
+
+.win {
+  background-color: blueviolet;
+}
+
+.win button {
+  margin: 20px;
+  padding: 8px;
+  background-color: white;
+  /* color: white; */
+}
+
+.win button:hover {
+  background-color: black;
+  color: white;
+}
