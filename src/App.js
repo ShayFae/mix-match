@@ -86,6 +86,16 @@ const shuffle = () => {
               <div className='cards' name='Hat' onClick={() => {setCheck1(!check1)}}>
                 <p id='Test' style={{ display: check1 ? "block" : "none" }}><img src="https://static.vecteezy.com/system/resources/previews/004/745/869/original/top-hat-free-vector.jpg" /></p>
               </div>
+              {/* <div className='cards' name="Hat" onClick={() => {setCheck2(!check2)}}>
+                <div className='test'>
+                <p style={{ display: check2 ? "block" : "none" }}><img src="https://static.vecteezy.com/system/resources/previews/004/745/869/original/top-hat-free-vector.jpg"/></p>
+              </div>
+              </div> */}
+            </section>
+            <section onClick={match}>
+              {/* <div className='cards' name='Hat' onClick={() => {setCheck1(!check1)}}>
+                <p id='Test' style={{ display: check1 ? "block" : "none" }}><img src="https://static.vecteezy.com/system/resources/previews/004/745/869/original/top-hat-free-vector.jpg" /></p>
+              </div> */}
               <div className='cards' name="Hat" onClick={() => {setCheck2(!check2)}}>
                 <div className='test'>
                 <p style={{ display: check2 ? "block" : "none" }}><img src="https://static.vecteezy.com/system/resources/previews/004/745/869/original/top-hat-free-vector.jpg"/></p>
@@ -97,6 +107,15 @@ const shuffle = () => {
               <div className='cards' name='Cat' onClick={() => {setCheck3(!check3)}}>
                 <p style={{ display: check3 ? "block" : "none" }}><img src="https://static.thenounproject.com/png/1179225-200.png" /></p>
               </div>
+              {/* <div className='cards' name='Cat' onClick={() => {setCheck4(!check4)}}>
+                <p style={{ display: check4 ? "block" : "none" }}><img src="https://static.thenounproject.com/png/1179225-200.png" /></p>
+              </div> */}
+            </section>
+
+            <section onClick={match}>
+              {/* <div className='cards' name='Cat' onClick={() => {setCheck3(!check3)}}>
+                <p style={{ display: check3 ? "block" : "none" }}><img src="https://static.thenounproject.com/png/1179225-200.png" /></p>
+              </div> */}
               <div className='cards' name='Cat' onClick={() => {setCheck4(!check4)}}>
                 <p style={{ display: check4 ? "block" : "none" }}><img src="https://static.thenounproject.com/png/1179225-200.png" /></p>
               </div>
@@ -106,6 +125,15 @@ const shuffle = () => {
               <div className='cards' name='Controller' onClick={() => {setCheck5(!check5)}}>
                 <p style={{ display: check5 ? "block" : "none" }}><img src="https://opengameart.org/sites/default/files/psController.png" /></p>
               </div>
+              {/* <div className='cards' name='Controller' onClick={() => {setCheck6(!check6)}}>
+                <p style={{ display: check6 ? "block" : "none" }}><img src="https://opengameart.org/sites/default/files/psController.png" /></p> 
+              </div>  */}
+            </section>
+
+            <section onClick={match}>
+              {/* <div className='cards' name='Controller' onClick={() => {setCheck5(!check5)}}>
+                <p style={{ display: check5 ? "block" : "none" }}><img src="https://opengameart.org/sites/default/files/psController.png" /></p>
+              </div> */}
               <div className='cards' name='Controller' onClick={() => {setCheck6(!check6)}}>
                 <p style={{ display: check6 ? "block" : "none" }}><img src="https://opengameart.org/sites/default/files/psController.png" /></p> 
               </div> 
@@ -115,6 +143,15 @@ const shuffle = () => {
               <div className='cards' name='Controller' onClick={() => {setCheck7(!check7)}}>
                 <p style={{ display: check7 ? "block" : "none" }}><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8BjF0eO9MS4fmkWlJdldwQPiphgS6KFEc9g&usqp=CAU" /></p>
               </div>
+              {/* <div className='cards' name='Controller' onClick={() => {setCheck8(!check8)}}>
+                <p style={{ display: check8 ? "block" : "none" }}><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8BjF0eO9MS4fmkWlJdldwQPiphgS6KFEc9g&usqp=CAU" /></p> 
+              </div>  */}
+            </section>
+
+            <section onClick={match}>
+              {/* <div className='cards' name='Controller' onClick={() => {setCheck7(!check7)}}>
+                <p style={{ display: check7 ? "block" : "none" }}><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8BjF0eO9MS4fmkWlJdldwQPiphgS6KFEc9g&usqp=CAU" /></p>
+              </div> */}
               <div className='cards' name='Controller' onClick={() => {setCheck8(!check8)}}>
                 <p style={{ display: check8 ? "block" : "none" }}><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8BjF0eO9MS4fmkWlJdldwQPiphgS6KFEc9g&usqp=CAU" /></p> 
               </div> 

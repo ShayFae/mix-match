@@ -25,29 +25,25 @@ img {
 }
 
  section {
-  display: flex;
+  /* display: flex;
   justify-content: center;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: wrap; */
+  /* width: 500px; */
 } 
 
 h1 {
   text-align: center;
-  /* margin-top: 100px;
-  padding-top: 40px; */
 }
 
 button {
   text-align: center;
-  align-items: center;
-  justify-content: center;
+  margin: 0 auto;
 }
 
 .game {
   background-color: orange;
-  /* width: 50%; */
-  /* height: 100vh; */
-  /* overflow: hidden; */
+
 }
 
 div {
@@ -75,4 +71,13 @@ div {
 .win button:hover {
   background-color: black;
   color: white;
+}
+
+ul {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 500px;
+  margin: 0 auto;
 }
